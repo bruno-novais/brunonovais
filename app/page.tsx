@@ -3,16 +3,16 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowDownRight, ArrowUpRight, Box, Code2, Layers3, Palette, PenTool, Sparkles } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
 import { PageFrame } from '@/components/site-shell'
 
 const tools = [
-  { name: 'WordPress', icon: Code2, logo: 'https://cdn.simpleicons.org/wordpress/ffa200' },
-  { name: 'Figma', icon: Sparkles, logo: 'https://cdn.simpleicons.org/figma/ffa200' },
-  { name: 'Photoshop', icon: Palette, logo: 'https://cdn.simpleicons.org/adobephotoshop/ffa200' },
-  { name: 'Illustrator', icon: PenTool, logo: 'https://cdn.simpleicons.org/adobeillustrator/ffa200' },
-  { name: 'Blender', icon: Box, logo: 'https://cdn.simpleicons.org/blender/ffa200' },
-  { name: '3ds Max', icon: Layers3, logo: 'https://cdn.simpleicons.org/autodesk/ffa200' },
+  { name: 'WordPress', logo: 'https://cdn.simpleicons.org/wordpress/ffa200' },
+  { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/ffa200' },
+  { name: 'Photoshop', logo: 'https://cdn.simpleicons.org/adobephotoshop/ffa200' },
+  { name: 'Illustrator', logo: 'https://cdn.simpleicons.org/adobeillustrator/ffa200' },
+  { name: 'Blender', logo: 'https://cdn.simpleicons.org/blender/ffa200' },
+  { name: '3ds Max', logo: 'https://cdn.simpleicons.org/autodesk/ffa200' },
 ]
 
 const specialties = [
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="relative lg:pb-2"><div className="glass-card relative overflow-hidden rounded-[2rem] p-6 sm:p-8"><div className="absolute -right-12 -top-12 size-40 rounded-full bg-primary/25 blur-3xl" /><div className="relative"><span className="eyebrow">Especialidades</span><div role="tablist" aria-label="Especialidades de Bruno" className="mt-6 flex flex-wrap gap-2">{specialties.map((item, index) => <button key={item.label} role="tab" aria-selected={active === index} onClick={() => setActive(index)} className={`rounded-full border px-3 py-2 text-xs transition-all ${active === index ? 'border-primary bg-primary text-black shadow-[0_0_24px_rgba(255,162,0,.3)]' : 'border-white/10 text-white/50 hover:border-primary/50 hover:text-primary'}`}>{item.label}</button>)}</div><AnimatePresence mode="wait"><motion.div key={active} role="tabpanel" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: .25 }} className="mt-10"><div className="flex items-end justify-between gap-4"><div><strong className="text-5xl tracking-[-.07em] text-primary">{specialty.metric}</strong><p className="mt-1 text-xs uppercase tracking-[.18em] text-white/35">{specialty.metricLabel}</p></div><span className="text-right text-xs text-white/30">Destaque<br /><b className="text-white/65">{specialty.featured}</b></span></div><h2 className="mt-8 text-2xl font-medium leading-tight tracking-[-.04em]">{specialty.title}</h2><p className="mt-3 text-sm leading-6 text-white/45">{specialty.text}</p></motion.div></AnimatePresence></div></div></div>
       </div>
     </section>
-    <section className="border-y border-white/10 px-6 py-20 lg:px-10"><div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><span className="eyebrow">Meu kit criativo</span><h2 className="mt-5 max-w-sm text-4xl font-medium tracking-[-.06em]">Ferramentas para transformar intenção em forma.</h2></div><div className="grid grid-cols-2 gap-3 sm:grid-cols-3">{tools.map(({ name, icon: Icon, logo }) => <div key={name} className="tool-card glass-card group relative flex min-h-36 flex-col justify-between overflow-hidden rounded-2xl p-5"><div className="tool-glass" /><img src={logo} alt={`${name} logo`} className="tool-logo relative z-10 size-12 object-contain opacity-70 transition duration-500 group-hover:scale-110 group-hover:opacity-100" onError={(event) => { event.currentTarget.style.display = 'none' }} /><Icon className="relative z-10 size-5 text-primary/60 transition group-hover:text-primary" /><span className="relative z-10 text-sm text-white/70">{name}</span></div>)}</div></div></section>
+    <section className="border-y border-white/10 px-6 py-20 lg:px-10"><div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><span className="eyebrow">Meu kit criativo</span><h2 className="mt-5 max-w-sm text-4xl font-medium tracking-[-.06em]">Ferramentas para transformar intenção em forma.</h2></div><div className="grid grid-cols-2 gap-3 sm:grid-cols-3">{tools.map(({ name, logo }) => <div key={name} className="tool-card glass-card group relative flex min-h-40 flex-col items-center justify-between overflow-hidden rounded-2xl p-5"><div className="tool-glass" /><div className="relative z-10 flex min-h-24 flex-1 items-center justify-center"><img src={logo} alt={`${name} logo oficial`} className="tool-logo size-16 object-contain opacity-80 transition duration-500 group-hover:scale-110 group-hover:opacity-100" onError={(event) => { event.currentTarget.style.display = 'none' }} /></div><span className="relative z-10 mt-4 text-center text-sm font-medium tracking-wide text-primary/80 transition-colors group-hover:text-primary">{name}</span></div>)}</div></div></section>
     <section className="px-6 py-24 lg:px-10"><div className="mx-auto max-w-7xl"><span className="eyebrow">Como posso ajudar</span><div className="mt-10 divide-y divide-white/10 border-y border-white/10">{services.map((service) => <div key={service.number} className="service-card group grid gap-5 py-8 transition-colors md:grid-cols-[5rem_1fr_1.2fr] md:items-center"><span className="service-number text-3xl font-light text-white/25 transition-colors group-hover:text-primary">{service.number}</span><h3 className="text-2xl font-medium tracking-[-.04em] transition-colors group-hover:text-primary">{service.title}</h3><p className="max-w-md text-sm leading-6 text-white/45">{service.text}</p></div>)}</div></div></section>
   </PageFrame>
 }
