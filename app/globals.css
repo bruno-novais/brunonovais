@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root { --background: #070908; --foreground: #f5f7f2; --primary: #c5ff18; --muted: #858d82; }
+@theme inline { --color-background: var(--background); --color-foreground: var(--foreground); --color-primary: var(--primary); --color-muted-foreground: var(--muted); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--background); }
+body { margin: 0; background: radial-gradient(circle at 80% 0%, rgba(109, 151, 14, .08), transparent 30rem), var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+::selection { background: var(--primary); color: #070908; }
+.glass-card { border: 1px solid rgba(255,255,255,.12); background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.025)); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 20px 80px rgba(0,0,0,.18); backdrop-filter: blur(18px); }
+.eyebrow { color: var(--primary); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; }
+.project-lime { background: linear-gradient(135deg, #738f16, #13180b 70%); }
+.project-purple { background: linear-gradient(135deg, #5b327c, #150c20 70%); }
+.project-red { background: linear-gradient(135deg, #8a2d24, #1d0b09 70%); }
+.project-blue { background: linear-gradient(135deg, #1d5b67, #071719 70%); }
+.project-orb { position: absolute; right: 12%; top: 20%; width: 12rem; height: 12rem; border-radius: 999px; background: rgba(255,255,255,.22); filter: blur(25px); transform: rotate(25deg); }
+.project-grid { position: absolute; inset: 0; opacity: .15; background-image: linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(to bottom, black, transparent); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
