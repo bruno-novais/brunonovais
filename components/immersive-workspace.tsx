@@ -12,9 +12,6 @@ export function ImmersiveWorkspace() {
   const orbRotate = useTransform(scrollY, [0, 3200], [0, 180])
 
   return <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-    <motion.div style={{ y: orbY, x: useTransform(scrollY, [0, 3200], ['0vw', '12vw']), rotate: orbRotate, opacity: useTransform(opacity, value => value * 1.4) }} className="ambient-orb ambient-orb-one absolute left-[-12rem] top-[18%] size-[34rem] rounded-full" />
-    <motion.div style={{ y: useTransform(orbY, value => value * -0.7), x: useTransform(scrollY, [0, 3200], ['0vw', '-10vw']), rotate: useTransform(orbRotate, value => value * -0.45), opacity: useTransform(opacity, value => value * 1.25) }} className="ambient-orb ambient-orb-two absolute right-[-14rem] top-[52%] size-[38rem] rounded-[42%]" />
-    <motion.div style={{ y: useTransform(orbY, value => value * 0.45), rotate: useTransform(orbRotate, value => value * 0.25), opacity: useTransform(opacity, value => value * 1.1) }} className="ambient-orb ambient-orb-three absolute bottom-[-12rem] left-[28%] size-[24rem] rounded-full" />
     <motion.div style={{ rotate, scale, y, opacity }} className="workspace-frame absolute left-1/2 top-[45%] size-[min(74vw,48rem)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem]" />
     <motion.div style={{ y, rotate: useTransform(rotate, value => value * -0.35), opacity }} className="workspace-grid absolute left-1/2 top-[18%] h-[85vh] w-[130vw] -translate-x-1/2" />
     <motion.div style={{ rotate: useTransform(rotate, value => value * .5), opacity }} className="workspace-axis workspace-axis-x absolute left-1/2 top-1/2 h-px w-[95vw] -translate-x-1/2" />
