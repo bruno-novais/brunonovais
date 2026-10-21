@@ -27,6 +27,11 @@ body { margin: 0; background: radial-gradient(circle at 80% 0%, rgba(255, 162, 0
 .ambient-orb-three { background: radial-gradient(circle, rgba(255,162,0,.16), rgba(54,58,57,.22) 45%, transparent 75%); filter: blur(64px); }
 .glass-card, .tool-card { background-color: rgba(10,12,11,.28); }
 .will-change-transform { will-change: transform, opacity; }
+.scroll-dive-model { filter: drop-shadow(0 30px 70px rgba(0,0,0,.55)); }
+.scroll-dive-frame { border-color: rgba(255,162,0,.28); background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,162,0,.05) 55%, rgba(0,0,0,.2)); backdrop-filter: blur(26px); }
+.scroll-dive-anchor { min-height: 28rem; border-color: rgba(255,162,0,.22); background: radial-gradient(circle at 50% 30%, rgba(255,162,0,.1), rgba(255,255,255,.025) 55%, transparent); }
+@media (max-width: 767px) { .scroll-dive-model { right: -8vw; top: 16vh; width: min(58vw, 17rem); } }
+@media (prefers-reduced-motion: reduce) { .scroll-dive-model { transform: none !important; } }
 @media (prefers-reduced-motion: reduce) { .workspace-frame, .workspace-grid, .workspace-axis { transform: none !important; } }
 .project-purple { background: linear-gradient(135deg, #5b327c, #150c20 70%); }
 .project-red { background: linear-gradient(135deg, #8a2d24, #1d0b09 70%); }
