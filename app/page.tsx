@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
 import { PageFrame } from '@/components/site-shell'
+import { ImmersiveWorkspace } from '@/components/immersive-workspace'
 
 const tools = [
   { name: 'WordPress', logo: 'https://cdn.simpleicons.org/wordpress/ffa200' },
@@ -30,6 +31,8 @@ export default function Home() {
   const [active, setActive] = useState(0)
   const specialty = specialties[active]
   return <PageFrame>
+    <ImmersiveWorkspace />
+    <div className="relative z-10">
     <section className="relative overflow-hidden px-6 pb-24 pt-16 lg:px-10 lg:pt-24">
       <div className="pointer-events-none absolute left-1/2 top-10 size-[32rem] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
       <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
@@ -39,5 +42,6 @@ export default function Home() {
     </section>
     <section className="border-y border-white/10 px-6 py-20 lg:px-10"><div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><span className="eyebrow">Meu kit criativo</span><h2 className="mt-5 max-w-sm text-4xl font-medium tracking-[-.06em]">Ferramentas para transformar intenção em forma.</h2></div><div className="grid grid-cols-2 gap-3 sm:grid-cols-3">{tools.map(({ name, logo }) => <div key={name} className="tool-card glass-card group relative flex min-h-40 flex-col items-center justify-between overflow-hidden rounded-2xl p-5"><div className="tool-glass" /><div className="relative z-10 flex min-h-24 flex-1 items-center justify-center"><img src={logo} alt={`${name} logo oficial`} className="tool-logo size-16 object-contain opacity-80 transition duration-500 group-hover:scale-110 group-hover:opacity-100" onError={(event) => { event.currentTarget.style.display = 'none' }} /></div><span className="relative z-10 mt-4 text-center text-sm font-medium tracking-wide text-primary/80 transition-colors group-hover:text-primary">{name}</span></div>)}</div></div></section>
     <section className="px-6 py-24 lg:px-10"><div className="mx-auto max-w-7xl"><span className="eyebrow">Como posso ajudar</span><div className="mt-10 divide-y divide-white/10 border-y border-white/10">{services.map((service) => <div key={service.number} className="service-card group grid gap-5 py-8 transition-colors md:grid-cols-[5rem_1fr_1.2fr] md:items-center"><span className="service-number text-3xl font-light text-white/25 transition-colors group-hover:text-primary">{service.number}</span><h3 className="text-2xl font-medium tracking-[-.04em] transition-colors group-hover:text-primary">{service.title}</h3><p className="max-w-md text-sm leading-6 text-white/45">{service.text}</p></div>)}</div></div></section>
+    </div>
   </PageFrame>
 }
