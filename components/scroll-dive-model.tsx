@@ -7,13 +7,13 @@ const modelImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eu-V
 export function ScrollDiveModel() {
   const { scrollY } = useScroll()
   const smoothScroll = useSpring(scrollY, { stiffness: 90, damping: 22, mass: 0.5 })
-  const x = useTransform(smoothScroll, [0, 720, 1500], ['24vw', '6vw', '-26vw'])
+  const x = useTransform(smoothScroll, [0, 720, 1500], ['0vw', '-4vw', '-26vw'])
   const y = useTransform(smoothScroll, [0, 720, 1500], ['4vh', '10vh', '14vh'])
   const scale = useTransform(smoothScroll, [0, 720, 1500], [0.8, 1.06, 0.48])
   const rotate = useTransform(smoothScroll, [0, 720, 1500], [0, -8, -4])
   const opacity = useTransform(smoothScroll, [0, 1100, 1700], [0.96, 0.92, 0])
 
-  return <motion.div aria-hidden="true" style={{ x, y, scale, rotate, opacity }} className="scroll-dive-model pointer-events-none fixed right-[4vw] top-[10vh] z-[5] w-[min(44vw,34rem)] origin-center will-change-transform md:right-[7vw] lg:top-[12vh]">
+  return <motion.div aria-hidden="true" style={{ x, y, scale, rotate, opacity }} className="scroll-dive-model pointer-events-none fixed right-[3vw] top-[15vh] z-[5] w-[min(52vw,30rem)] origin-center will-change-transform md:right-[5vw] md:top-[14vh] md:w-[min(40vw,30rem)] lg:top-[15vh]">
     <div className="scroll-dive-frame glass-card relative aspect-[2/3] overflow-hidden rounded-[2.5rem] p-2">
       <img src={modelImage} alt="" className="size-full object-cover object-top mix-blend-lighten" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#070908]/65 via-transparent to-primary/10" />

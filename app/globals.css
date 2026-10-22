@@ -30,7 +30,7 @@ body { margin: 0; background: radial-gradient(circle at 80% 0%, rgba(255, 162, 0
 .scroll-dive-model { filter: drop-shadow(0 30px 70px rgba(0,0,0,.55)); }
 .scroll-dive-frame { border-color: rgba(255,162,0,.28); background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,162,0,.05) 55%, rgba(0,0,0,.2)); backdrop-filter: blur(26px); }
 .scroll-dive-anchor { min-height: 28rem; border-color: rgba(255,162,0,.22); background: radial-gradient(circle at 50% 30%, rgba(255,162,0,.1), rgba(255,255,255,.025) 55%, transparent); }
-@media (max-width: 767px) { .scroll-dive-model { right: -8vw; top: 16vh; width: min(58vw, 17rem); } }
+@media (max-width: 767px) { .scroll-dive-model { right: 3vw; top: 18vh; width: min(52vw, 17rem); opacity: .76; } .scroll-dive-model .scroll-dive-frame { border-radius: 1.5rem; padding: .35rem; } }
 @media (prefers-reduced-motion: reduce) { .scroll-dive-model { transform: none !important; } }
 @media (prefers-reduced-motion: reduce) { .workspace-frame, .workspace-grid, .workspace-axis { transform: none !important; } }
 .project-purple { background: linear-gradient(135deg, #5b327c, #150c20 70%); }

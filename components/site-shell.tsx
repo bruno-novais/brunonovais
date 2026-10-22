@@ -15,8 +15,8 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-10">
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/45 px-4 py-2.5 backdrop-blur-xl sm:px-5">
-        <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3" aria-label="Bruno Novais, página inicial">
-          <img src={logo} alt="Logo BN" className="size-9 rounded-xl object-cover" />
+        <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3 rounded-2xl p-2" aria-label="Bruno Novais, página inicial">
+          <img src={logo} alt="Logo BN" className="max-h-8 w-auto max-w-10 rounded-lg object-contain" />
           <span className="hidden text-sm font-semibold tracking-wide sm:block">BRUNO NOVAIS<span className="text-primary">.</span></span>
         </Link>
         <nav className="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
@@ -31,7 +31,7 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  return <footer className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-xs text-white/35 sm:flex-row"><Link href="/" className="flex items-center gap-2"><img src={logo} alt="Logo BN" className="size-6 rounded-md object-cover" /><span>Bruno Novais</span></Link><span>© 2026 - Bruno Novais</span><span>Designing digital experiences<span className="text-primary">.</span></span></div></footer>
+  return <footer className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-xs text-white/35 sm:flex-row"><Link href="/" className="flex items-center gap-2 rounded-xl px-3 py-2"><img src={logo} alt="Logo BN" className="max-h-8 w-auto max-w-10 rounded-md object-contain" /><span>Bruno Novais</span></Link><span>© 2026 - Bruno Novais</span><span>Designing digital experiences<span className="text-primary">.</span></span></div></footer>
 }
 
 export function PageFrame({ children }: { children: React.ReactNode }) { return <><SiteHeader /><main className="min-h-screen pt-24">{children}</main><SiteFooter /></> }
