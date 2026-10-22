@@ -6,7 +6,7 @@ import { Menu, ArrowUpRight, X } from 'lucide-react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LogoBN%20200x200%20_0086ff-DHAaxsL6QyFjcC27l4EK26NZnKhB0X.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LogoBN%20200x200%20_ff003d-mCVSerwvNXPJHuEPZeJ82J3t4t540T.png'
 
 export function SiteHeader() {
   const pathname = usePathname()
