@@ -11,7 +11,7 @@ export function ImmersiveWorkspace() {
   const orbY = useTransform(scrollY, [0, 1600, 3200], [0, 170, -80])
   const orbRotate = useTransform(scrollY, [0, 3200], [0, 180])
 
-  return <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+  return <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 w-full max-w-[100vw] overflow-hidden">
     <motion.div style={{ y: orbY, rotate: orbRotate, opacity }} className="ambient-orb ambient-orb-one absolute left-[-8%] top-[16%] size-[28rem] rounded-full" />
     <motion.div style={{ y: useTransform(orbY, value => value * -0.65), rotate: useTransform(orbRotate, value => value * -0.45), opacity }} className="ambient-orb ambient-orb-two absolute bottom-[-8%] right-[-6%] size-[34rem] rounded-[42%]" />
     <motion.div style={{ x: useTransform(orbY, value => value * 0.22), y: useTransform(orbY, value => value * -0.3), opacity }} className="ambient-orb ambient-orb-three absolute left-[42%] top-[48%] size-[16rem] rounded-[35%]" />

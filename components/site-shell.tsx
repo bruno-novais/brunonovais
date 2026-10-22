@@ -6,7 +6,7 @@ import { Menu, ArrowUpRight, X } from 'lucide-react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LogoBN%20200x200%20_ff003d-mCVSerwvNXPJHuEPZeJ82J3t4t540T.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LogoBN%20200x200%20_12f284-7jIweSt4BsmRIJpzqbUWgHCpsI7Flm.png'
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -34,4 +34,4 @@ export function SiteFooter() {
   return <footer className="border-t border-white/10 px-6 py-8 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-xs text-white/35 sm:flex-row"><Link href="/" className="flex items-center gap-2 rounded-xl px-3 py-2"><img src={logo} alt="Logo BN" className="max-h-8 w-auto max-w-10 rounded-md object-contain" /><span>Bruno Novais</span></Link><span>© 2026 - Bruno Novais</span><span>Designing digital experiences<span className="text-primary">.</span></span></div></footer>
 }
 
-export function PageFrame({ children }: { children: React.ReactNode }) { return <><SiteHeader /><main className="min-h-screen pt-24">{children}</main><SiteFooter /></> }
+export function PageFrame({ children }: { children: React.ReactNode }) { return <><SiteHeader /><main className="min-h-screen overflow-x-hidden pt-24">{children}</main><SiteFooter /></> }

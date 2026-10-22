@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Bruno Novais — Designer multidisciplinar',
   description: 'Portfólio de Bruno Novais: Web Design, UI/UX Design e 3D Design.',
   generator: 'Next.js',
-  icons: { icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tmp_0b1f42d3-5f97-4392-bb52-c7f4f2c71c71-OvVeO8qyNl1gDa2r6WPr3SfAwNzgiU.png', apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tmp_0b1f42d3-5f97-4392-bb52-c7f4f2c71c71-OvVeO8qyNl1gDa2r6WPr3SfAwNzgiU.png' },
+  icons: { icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LogoBN%20200x200%20_12f284-7jIweSt4BsmRIJpzqbUWgHCpsI7Flm.png', apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LogoBN%20200x200%20_12f284-7jIweSt4BsmRIJpzqbUWgHCpsI7Flm.png' },
 }
 
 export const viewport: Viewport = {
